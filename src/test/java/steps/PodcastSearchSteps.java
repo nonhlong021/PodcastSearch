@@ -34,7 +34,7 @@ public class PodcastSearchSteps {
 
     @When("I check the number of episodes in season {string}")
     public void iCheckTheNumberOfEpisodesInSeason(String season) {
-        services.setEndpoint("http://your.api.base.url/ /id/"+id);
+        services.setEndpoint("http://your.api.base.url/id/"+id);
         services.setHTTPMethod("GET");
         services.build();
         response = services.send();
@@ -44,6 +44,6 @@ public class PodcastSearchSteps {
     @Then("it should have {string} episodes")
     public void itShouldHaveEpisodes(String episodes) {
         List<String> episodelist = response.jsonPath().getList(("seasons.episodes"));
-        assertEquals(episodes, episodes);
+        assertEquals(episodes, episodelist);
     }
 }
