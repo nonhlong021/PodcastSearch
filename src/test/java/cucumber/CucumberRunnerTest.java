@@ -1,2 +1,16 @@
-package cucumber;public class CucumberRunnerTest {
+package cucumber;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "src/test/resources/feature"
+        ,glue={"feature"},
+        tags="@rest"
+)
+
+public class CucumberRunnerTest {
+
 }
