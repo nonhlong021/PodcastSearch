@@ -42,9 +42,8 @@ public class PodcastSearchSteps {
     }
 
     @Then("it should have {string} episodes")
-    public void itShouldHaveEpisodes(String season) {
-
-        List<String> episodes = response.jsonPath().getList(("seasons.episodes"));
-        assertEquals(season, episodes);
+    public void itShouldHaveEpisodes(String episodes) {
+        List<String> episodelist = response.jsonPath().getList(("seasons.episodes"));
+        assertEquals(episodes, episodes);
     }
 }
